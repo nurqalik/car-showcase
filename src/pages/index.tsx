@@ -25,7 +25,7 @@ const Home: NextPage = () => {
             </div>
             <div className="items-center md:py-4">
               <img
-                className="md:rounded-lg md:scale-110"
+                className="md:rounded-lg md:scale-110 w-full"
                 src="https://ik.imagekit.io/tvlk/image/imageResource/2023/07/27/1690453001976-0f3d04197107cb4f93c2e77a3c339c24.jpeg?tr=h-230,q-75,w-476"
               />
             </div>
@@ -254,7 +254,7 @@ const Home: NextPage = () => {
               selection of a car that suits your needs will certainly support
               your trip to be more comfortable and safe
             </p>
-            <div className="mt-8 flex flex-col md:flex-row">
+            <div className="mt-8 flex flex-col items-center md:flex-row">
               <img
                 src="https://ik.imagekit.io/tvlk/image/imageResource/2020/03/17/1584430125393-57e3cadd38e063f7a29a08c9f62fa1c8.jpeg?tr=q-75"
                 alt=""
