@@ -39,7 +39,7 @@ const Home: NextPage = () => {
         </div>
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row pb-4">
-            <div className="w-xs flex-1 rounded-lg border bg-white hover:shadow">
+            <div className="w-xs flex-1 rounded-lg border bg-white hover:shadow m-4">
               <div className="mx-auto items-center">
                 <img
                   className="mx-auto items-center rounded-lg py-4"
@@ -58,7 +58,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="w-sm flex-1 rounded-lg border bg-white hover:shadow">
+            <div className="w-sm flex-1 rounded-lg border bg-white hover:shadow m-4">
               <div className="mx-auto items-center">
                 <img
                   className="mx-auto items-center rounded-lg py-4"
@@ -76,7 +76,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="w-sm flex-1 rounded-lg border bg-white hover:shadow">
+            <div className="w-sm flex-1 rounded-lg border bg-white hover:shadow m-4">
               <div className="mx-auto items-center">
                 <img
                   className="mx-auto items-center rounded-lg py-4"
@@ -143,7 +143,7 @@ const Home: NextPage = () => {
               <hr className="w-1/12 bg-yellow-400 px-0.5 py-0.5" />
             </div>
             <div className="flex w-full justify-center md:justify-normal flex-col md:flex-row md:px-2 pt-8">
-              <div className="bordered md:mx-4 w-full md:w-1/2 rounded-lg border-2 md:shadow-lg">
+              <div className="bordered md:mx-4 w-full md:w-1/2 rounded-lg border-2 md:shadow-lg my-4">
                 <div className="bordered border-b-2 px-4 md:px-0 py-8 md:py-4 text-center">
                   Without driver general requirement
                 </div>
@@ -187,7 +187,7 @@ const Home: NextPage = () => {
                   </p>
                 </div>
               </div>
-              <div className="bordered md:mx-4 w-full md:w-1/2 rounded-lg border-2 shadow-lg">
+              <div className="bordered md:mx-4 w-full md:w-1/2 rounded-lg border-2 shadow-lg my-4">
                 <div className="bordered border-b-2 px-4 md:px-0 py-8 md:py-4 text-center">
                   With Driver General Requirement
                 </div>
