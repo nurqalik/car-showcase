@@ -46,8 +46,7 @@ const Navbar = () => {
             </button>
             {!modal ? (
               <div
-                tabIndex={0}
-                className="w-auto flex-row justify-end collapse md:visible rounded-none"
+                className="w-auto flex-row collapse md:pt-2.5 md:visible rounded-none"
               >
                 <Link
                   className="p-2 text-blue-600 hover:text-blue-800"

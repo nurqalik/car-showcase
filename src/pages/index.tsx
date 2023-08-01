@@ -11,21 +11,21 @@ const Home: NextPage = () => {
       <Navbar />
       <header>
         <div className="w-full bg-blue-500">
-          <div className="container mx-auto my-4 flex flex-row px-8">
-            <div className="items-center py-8 pl-20 pr-4">
+          <div className="container mx-auto flex flex-col-reverse my-4 md:py-16 md:flex-row md:px-8">
+            <div className="text-center md:text-left md:items-center py-10 px-8 md:py-8 md:pl-20 md:pr-4">
               <div className="text-2xl font-semibold text-white">
                 Cheapest Car Rental Daily Without Driver and With Driver Car
                 Hire in Cheapa.
               </div>
-              <p className="text-white">
+              <p className="text-white pt-4">
                 Find and book vehicle rental available with driver or without
                 driver. Cheapa Lifestyle SuperApp provides you the cheap car
                 rental.
               </p>
             </div>
-            <div className="items-center py-4">
+            <div className="items-center md:py-4">
               <img
-                className="rounded-lg"
+                className="md:rounded-lg md:scale-110"
                 src="https://ik.imagekit.io/tvlk/image/imageResource/2023/07/27/1690453001976-0f3d04197107cb4f93c2e77a3c339c24.jpeg?tr=h-230,q-75,w-476"
               />
             </div>
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
           Why rent a car through Cheapa?
         </div>
         <div className="container mx-auto">
-          <div className="flex flex-row pb-4">
+          <div className="flex flex-col md:flex-row pb-4">
             <div className="w-xs flex-1 rounded-lg border bg-white hover:shadow">
               <div className="mx-auto items-center">
                 <img
@@ -103,7 +103,7 @@ const Home: NextPage = () => {
             <div className="flex w-full flex-col items-center">
               <hr className="w-1/12 bg-yellow-400 px-0.5 py-0.5" />
             </div>
-            <p className="pt-8 text-left font-normal">
+            <p className="pt-8 text-center md:text-left font-normal">
               Traveling with family or relatives is more fun if you choose the
               right transportation. Car rental can be the best choice to
               facilitate your mobility. To further support your flexibility
@@ -112,7 +112,7 @@ const Home: NextPage = () => {
               through Cheapa Lifestyle SuperApp. Find a wide selection of the
               best cars, complete with the price list.
             </p>
-            <p className="pt-4 text-left font-normal">
+            <p className="pt-4 text-center md:text-left font-normal">
               Get 24 hours of rental time for without driver car rental service
               in Cheapa. Make your family or business trip more efficient by
               using our without driver service.
@@ -125,7 +125,7 @@ const Home: NextPage = () => {
             <div className="flex w-full flex-col items-center">
               <hr className="w-1/12 bg-yellow-400 px-0.5 py-0.5" />
             </div>
-            <p className="pt-8 text-left font-normal">
+            <p className="pt-8 text-center md:text-left font-normal">
               Ease of mobility is very important when you are on a trip. If you
               wish for a hassle-free trip while exploring tourist destinations,
               renting a car with driver service will be the right choice. As
@@ -142,14 +142,14 @@ const Home: NextPage = () => {
             <div className="flex w-full flex-col items-center">
               <hr className="w-1/12 bg-yellow-400 px-0.5 py-0.5" />
             </div>
-            <div className="flex w-full flex-row px-2 pt-8">
-              <div className="bordered mx-4 w-1/2 rounded-lg border-2 shadow-lg">
-                <div className="bordered border-b-2 py-4 text-center">
+            <div className="flex w-full justify-center md:justify-normal flex-col md:flex-row md:px-2 pt-8">
+              <div className="bordered md:mx-4 w-full md:w-1/2 rounded-lg border-2 md:shadow-lg">
+                <div className="bordered border-b-2 px-4 md:px-0 py-8 md:py-4 text-center">
                   Without driver general requirement
                 </div>
-                <div className="mx-12 my-6 flex flex-col">
-                  <p className="py-4 font-bold">Includes</p>
-                  <ul className="mx-4 list-disc">
+                <div className="mx-10 md:mx-12 my-4 md:my-6 flex flex-col">
+                  <p className="py-4 font-bold text-center md:text-left">Includes</p>
+                  <ul className="mx-4 list-disc text-center md:text-left">
                     <li>Insurance for car and passengers</li>
                     <li>
                       Use for up to
@@ -157,18 +157,18 @@ const Home: NextPage = () => {
                       each rental day
                     </li>
                   </ul>
-                  <p className="py-4 font-bold">Excludes</p>
-                  <ul className="mx-4 list-disc">
+                  <p className="py-4 font-bold text-center md:text-left">Excludes</p>
+                  <ul className="mx-4 list-disc text-center md:text-left">
                     <li>
                       Fuel, pickup/drop-off out of town, and insurance claims
                     </li>
                   </ul>
-                  <p className="py-4 font-bold">Pickup Location</p>
-                  <ul className="mx-4 list-disc">
+                  <p className="py-4 font-bold text-center md:text-left">Pickup Location</p>
+                  <ul className="mx-4 list-disc text-center md:text-left">
                     <li>Free pickup and drop-off at the airport and in town</li>
                   </ul>
-                  <p className="py-4 font-bold">Required Documents</p>
-                  <ul className="mx-4 list-disc">
+                  <p className="py-4 font-bold text-center md:text-left">Required Documents</p>
+                  <ul className="mx-4 list-disc text-center md:text-left">
                     <li>
                       Original ID card/passport, driver&apos;s license, and personal
                       or family&apos;s credit card (a photo of your family card (KK)
@@ -177,7 +177,7 @@ const Home: NextPage = () => {
                       member&apos;s credit card)
                     </li>
                   </ul>
-                  <p className="py-4 italic">
+                  <p className="py-4 italic text-center md:text-left">
                     Note: Social media accounts and selfie with ID card are
                     required for rentals. Suppliers will require additional
                     forms of verification if social media account is
@@ -187,13 +187,13 @@ const Home: NextPage = () => {
                   </p>
                 </div>
               </div>
-              <div className="bordered mx-4 w-1/2 rounded-lg border-2 shadow-lg">
-                <div className="bordered border-b-2 py-4 text-center">
+              <div className="bordered md:mx-4 w-full md:w-1/2 rounded-lg border-2 shadow-lg">
+                <div className="bordered border-b-2 px-4 md:px-0 py-8 md:py-4 text-center">
                   With Driver General Requirement
                 </div>
-                <div className="mx-12 my-6 flex flex-col">
-                  <p className="py-4 font-bold">Includes</p>
-                  <ul className="mx-4 list-disc">
+                <div className="mx-10 md:mx-12 my-4 md:my-6 flex flex-col">
+                  <p className="py-4 font-bold text-center md:text-left">Includes</p>
+                  <ul className="mx-4 list-disc text-center md:text-left">
                     <li>Use within the city area</li>
                     <li>
                       Use for up to
@@ -201,21 +201,21 @@ const Home: NextPage = () => {
                       to 23:59 on each rental day
                     </li>
                   </ul>
-                  <p className="py-4 font-bold">Excludes</p>
-                  <ul className="mx-4 list-disc">
+                  <p className="py-4 font-bold text-center md:text-left">Excludes</p>
+                  <ul className="mx-4 list-disc text-center md:text-left">
                     <li>Fuel, parking, toll fees, driver&apos;s meals and tips</li>
                     <li>
                       Excludes drivers&apos;s accomodation in case of out of town use
                     </li>
                     <li>Use outside the city</li>
                   </ul>
-                  <p className="py-4 font-bold">Pickup Location</p>
-                  <ul className="mx-4 list-disc">
+                  <p className="py-4 font-bold text-center md:text-left">Pickup Location</p>
+                  <ul className="mx-4 list-disc text-center md:text-left">
                     <li>
                       Free pickup and drop-off at the airport and in town.
                     </li>
                   </ul>
-                  <p className="py-4 italic">
+                  <p className="py-4 italic text-center md:text-left">
                     The driver will contact you 12 – 24 hours before pickup
                     time. For same day rental, driver will contact you as soon
                     as your booking is confirmed.
@@ -224,11 +224,11 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className="px-24 pt-40">
+          <div className="md:px-24 md:pt-40">
             <div className="py-8 text-center text-2xl font-medium">
               Convenient and Safety Tips while Renting a Car on a Vacation
             </div>
-            <p>
+            <p className="indent-4 md:indent-8">
               Renting a car often becomes a choice for comfortable and safe
               traveling. This mode of transportation allows you to explore
               various popular destinations and arrange travel schedules
@@ -239,8 +239,8 @@ const Home: NextPage = () => {
               should do to have a safe and comfortable experience while
               traveling.
             </p>
-            <p className="font-medim py-4 font-bold">Know what you needs</p>
-            <p>
+            <p className="font-medim py-4 font-bold underline underline-offset-2 md:no-underline">Know what you needs</p>
+            <p className="indent-4 md:indent-8">
               Start by knowing your travel needs, it will make you easier to
               choose the right type of car to support your travel needs. For
               example, if you are traveling with a group of family or friends,
@@ -254,14 +254,14 @@ const Home: NextPage = () => {
               selection of a car that suits your needs will certainly support
               your trip to be more comfortable and safe
             </p>
-            <div className="mt-8 flex flex-row">
+            <div className="mt-8 flex flex-col md:flex-row">
               <img
                 src="https://ik.imagekit.io/tvlk/image/imageResource/2020/03/17/1584430125393-57e3cadd38e063f7a29a08c9f62fa1c8.jpeg?tr=q-75"
                 alt=""
-                className="m-4 h-64 w-96 rounded-xl"
+                className="my-4 md:m-4 h-44 md:h-64 object-none w-72 md:w-96 rounded-xl"
               />
-              <div className="m-4">
-                <p className="pb-2 font-bold">
+              <div className="my-4 md:m-4">
+                <p className="pb-4 md:pb-2 font-bold">
                   Make sure the condition of the car and facilities offered
                 </p>
                 <p>
@@ -338,11 +338,9 @@ const Home: NextPage = () => {
       </div>
       <footer className="pt-20">
         <div className="w-full bg-blue-500">
-          <div className="flex flex-row px-8">
-            <div className="items-center py-8 pl-20 pr-4">
-              <div className="text-2xl font-semibold text-white">Cheapa</div>
+            <div className="items-center py-8 md:pl-20 md:pr-4">
+              <div className="text-xl text-center font-medium text-white">&copy;Cheapa 2023</div>
             </div>
-          </div>
         </div>
       </footer>
     </>
