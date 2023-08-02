@@ -1,6 +1,7 @@
 import { type NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "~/components/footer";
 import Navbar from "~/components/navbar";
 
 import { api } from "~/utils/api";
@@ -13,11 +14,11 @@ const Home: NextPage = () => {
         <div className="w-full bg-blue-500">
           <div className="container mx-auto flex flex-col-reverse my-4 md:py-16 md:flex-row md:px-8">
             <div className="text-center md:text-left md:items-center py-10 px-8 md:py-8 md:pl-20 md:pr-4">
-              <div className="text-2xl font-semibold text-white">
+              <div className="text-2xl text-white font-semibold md:bg-gradient-to-r md:from-white md:to-blue-200 md:bg-clip-text md:text-transparent">
                 Cheapest Car Rental Daily Without Driver and With Driver Car
                 Hire in Cheapa.
               </div>
-              <p className="text-white pt-4">
+              <p className="text-white md:bg-gradient-to-r md:from-white md:to-blue-200 md:bg-clip-text md:text-transparent pt-4">
                 Find and book vehicle rental available with driver or without
                 driver. Cheapa Lifestyle SuperApp provides you the cheap car
                 rental.
@@ -39,7 +40,7 @@ const Home: NextPage = () => {
         </div>
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row pb-4">
-            <div className="w-xs flex-1 rounded-lg border bg-white hover:shadow m-4">
+            <div className="w-xs flex-1 rounded-lg border bg-white m-4 shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30">
               <div className="mx-auto items-center">
                 <img
                   className="mx-auto items-center rounded-lg py-4"
@@ -58,7 +59,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="w-sm flex-1 rounded-lg border bg-white hover:shadow m-4">
+            <div className="w-sm flex-1 rounded-lg border bg-white shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30 m-4">
               <div className="mx-auto items-center">
                 <img
                   className="mx-auto items-center rounded-lg py-4"
@@ -76,7 +77,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="w-sm flex-1 rounded-lg border bg-white hover:shadow m-4">
+            <div className="w-sm flex-1 rounded-lg border bg-white shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30 m-4">
               <div className="mx-auto items-center">
                 <img
                   className="mx-auto items-center rounded-lg py-4"
@@ -187,7 +188,7 @@ const Home: NextPage = () => {
                   </p>
                 </div>
               </div>
-              <div className="bordered md:mx-4 w-full md:w-1/2 rounded-lg border-2 shadow-lg my-4">
+              <div className="bordered md:mx-4 w-full md:w-1/2 rounded-lg border-2 md:shadow-lg my-4">
                 <div className="bordered border-b-2 px-4 md:px-0 py-8 md:py-4 text-center">
                   With Driver General Requirement
                 </div>
@@ -336,13 +337,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <footer className="pt-20">
-        <div className="w-full bg-blue-500">
-            <div className="items-center py-8 md:pl-20 md:pr-4">
-              <div className="text-xl text-center font-medium text-white">&copy;Cheapa 2023</div>
-            </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };
