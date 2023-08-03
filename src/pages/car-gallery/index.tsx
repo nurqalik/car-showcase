@@ -9,68 +9,67 @@ import {
 import {
   Button,
 } from "@nextui-org/react";
+import { Car } from "@prisma/client";
 import Image from "next/image";
+import { useState } from "react";
 import Footer from "~/components/footer";
 import Navbar from "~/components/navbar";
+import { api } from "~/utils/api";
 
 const CarGallery = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [cars, setCars] = useState<Car[]>([])
+  const [oneCar, setOneCar] = useState('')
+  const [car,setCar] = useState<Car | null>()
+  api.car.getAllCar.useQuery(undefined, {
+    onSuccess: (data) => {
+      setCars(
+        data.map(
+          (item) => ({
+            id: item.id,
+            name: item.name,
+            description: item.description,
+            brand: item.brand,
+            img: item.img,
+          } as Car)
+        )
+      )
+    }
+  })
+  api.car.getOneCar.useQuery(oneCar,{
+    onSuccess: (data) => {
+      setCar(data)
+    }
+  })
 
-  const cars = {
-    name: "GT-R",
-    merk: "Honda",
-    years: 1990,
-    image: "/car-image/car1.jpg",
-  };
   return (
     <>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-        <ModalContent className="items-center bg-white max-w-sm">
+        <ModalContent className="items-center bg-white max-w-xs h-auto md:h-auto md:max-w-md">
           {(onClose) => (
             <>
                   <Image
-                    className="rounded-t-lg w-full object-cover h-56"
-                    src={"/car-image/car1.jpg"}
+                    className="rounded-t-lg w-full object-cover h-44 md:h-56"
+                    src={car?.img as string}
                     width={0}
                     height={0}
                     sizes="100vw"
                     alt="gallery"
                   />
-              <div className="max-w-sm rounded-lg">
-                <div className="p-5">
-                  <a href="#">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-                      Noteworthy technology acquisitions 2021
+              <div className="max-w-xl px-4 rounded-lg text-center">
+                <div className="p-2">
+                    <h5 className="mb-2 text-sm md:text-2xl font-bold tracking-tight text-gray-900">
+                      {car?.name}
                     </h5>
-                  </a>
-                  <p className="mb-3 font-normal text-gray-700 ">
-                    Here are the biggest enterprise technology acquisitions of
-                    2021 so far, in reverse chronological order.
+                  <p className="mb-3 font-normal text-xs md:text-base text-gray-700 ">
+                    {car?.description}
                   </p>
-                  <a
-                    href="#"
-                    className="inline-flex items-center rounded-lg bg-blue-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
-                  >
-                    Read more
-                    <svg
-                      className="ml-2 h-3.5 w-3.5"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 14 10"
-                    >
-                      <path
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M1 5h12m0 0L9 1m4 4L9 9"
-                      />
-                    </svg>
-                  </a>
+                  <p className="font-extralight text-xs text-gray-700 ">
+                    {car?.brand}
+                  </p>
                 </div>
               </div>
-              <ModalFooter>
+              <ModalFooter className="py-0">
                 <Button
                   variant="light"
                   color="default"
@@ -87,139 +86,26 @@ const CarGallery = () => {
       <Navbar />
       <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
         <div className="-m-1 flex flex-wrap md:-m-2">
-          <div className="flex w-1/2 flex-wrap">
-            <div className="w-1/2 p-1 md:p-2">
+          <div className="flex w-full md:w-full flex-wrap">
+            {cars.map((item) => (
+              <div className="w-1/2 md:h-1/4 p-1 md:p-2" key={item.id}>
               <Image
                 alt="gallery"
                 className="block h-full w-full rounded-lg object-cover object-center transition duration-300 ease-in-out hover:scale-105 hover:drop-shadow-lg"
-                src={"/car-image/car1.jpg"}
+                src={item.img}
                 width={0}
                 height={0}
                 sizes="100vw"
-                onClick={onOpen}
+                onClick={(event) => {
+                  onOpen();
+                  setOneCar(item.id)
+                }}
               />
             </div>
-
-            <div className="w-1/2 p-1 md:p-2">
-              <Image
-                alt="gallery"
-                className="block h-full w-full rounded-lg object-cover object-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                src={"/car-image/car2.jpg"}
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
-            </div>
-            <div className="w-full p-1 md:p-2">
-              <Image
-                alt="gallery"
-                className="block h-full w-full rounded-lg object-cover object-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                src={"/car-image/car3.jpg"}
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
-            </div>
-          </div>
-          <div className="flex w-1/2 flex-wrap">
-            <div className="w-full p-1 md:p-2">
-              <Image
-                alt="gallery"
-                className="block h-full w-full rounded-lg object-cover object-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                src={"/car-image/car4.jpg"}
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
-            </div>
-            <div className="w-1/2 p-1 md:p-2">
-              <Image
-                alt="gallery"
-                className="block h-full w-full rounded-lg object-cover object-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                src={"/car-image/car5.jpg"}
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
-            </div>
-            <div className="w-1/2 p-1 md:p-2">
-              <Image
-                alt="gallery"
-                className="block h-full w-full rounded-lg object-cover object-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                src={"/car-image/car6.jpg"}
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
-            </div>
+            ))}
           </div>
         </div>
-        <div className="-m-1 flex flex-wrap md:-m-2">
-          <div className="flex w-1/2 flex-wrap">
-            <div className="w-1/2 p-1 md:p-2">
-              <Image
-                alt="gallery"
-                className="block h-full w-full rounded-lg object-cover object-center transition duration-300 ease-in-out hover:scale-105 hover:drop-shadow-lg"
-                src={"/car-image/car1.jpg"}
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
-            </div>
-            <div className="w-1/2 p-1 md:p-2">
-              <Image
-                alt="gallery"
-                className="block h-full w-full rounded-lg object-cover object-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                src={"/car-image/car2.jpg"}
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
-            </div>
-            <div className="w-full p-1 md:p-2">
-              <Image
-                alt="gallery"
-                className="block h-full w-full rounded-lg object-cover object-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                src={"/car-image/car3.jpg"}
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
-            </div>
-          </div>
-          <div className="flex w-1/2 flex-wrap">
-            <div className="w-full p-1 md:p-2">
-              <Image
-                alt="gallery"
-                className="block h-full w-full rounded-lg object-cover object-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                src={"/car-image/car4.jpg"}
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
-            </div>
-            <div className="w-1/2 p-1 md:p-2">
-              <Image
-                alt="gallery"
-                className="block h-full w-full rounded-lg object-cover object-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                src={"/car-image/car5.jpg"}
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
-            </div>
-            <div className="w-1/2 p-1 md:p-2">
-              <Image
-                alt="gallery"
-                className="block h-full w-full rounded-lg object-cover object-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-lg"
-                src={"/car-image/car6.jpg"}
-                width={0}
-                height={0}
-                sizes="100vw"
-              />
-            </div>
-          </div>
-        </div>
+        
       </div>
 
       <Footer />
