@@ -11,7 +11,7 @@ const Navbar = () => {
     }
   };
   return (
-    <nav className="w-full bg-white">
+    <nav className="w-full bg-white z-0">
       <div className="mx-auto max-w-screen-xl items-center justify-between p-4">
         <div className="flex flex-row justify-between">
           <Link
@@ -72,7 +72,7 @@ const Navbar = () => {
                 tabIndex={0}
                 className="relative py-2"
               >
-                <div className="absolute flex flex-col w-40 right-0 rounded-lg border-none items-center bg-white">
+                <div className="absolute z-10 flex flex-col w-40 right-0 rounded-lg border-none items-center bg-white">
                 <Link
                   className="p-2 text-blue-600 hover:text-blue-800"
                   href={"/"}
