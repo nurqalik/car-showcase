@@ -44,7 +44,7 @@ const CarGallery = () => {
 
   return (
     <>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+      <Modal isOpen={isOpen} placement="center" onOpenChange={onOpenChange}>
         <ModalContent className="items-center bg-white max-w-xs h-auto md:h-auto md:max-w-md">
           {(onClose) => (
             <>
